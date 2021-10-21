@@ -10,7 +10,7 @@ float temp; // 온도값 저장 변수
  
 void setup() {
   Serial.begin(9600);//시리얼 모니터를 표현하기 위한 준비
-  dht.begin();
+  dht.begin();//Start printting the values in the serial monitor
   delay(2000);
   lcd.init();//lcd초기화
   lcd.backlight();//lcd백라이트 켬
@@ -28,9 +28,9 @@ void loop() {
   Serial.print(" %, TEMPERATURE: "); //"%"(습도단위) "TEMPERATURE:" 출력
   Serial.print(temp, 1);//온도값은 소수점 이하 1자리까지 표시
   Serial.println(" C"); //"C" 온도 단위 표시
+  
   lcd.setCursor(0,0); // LCD Cursor 원점
   lcd.print("TEMP:"); // LCD에 "temp" 표시
- 
   float t = temp; // 온도값을 t에 할당
   lcd.print(t,1); // 온도값 LCD로 출력
   lcd.print(" C"); // 온도 단위 표시
