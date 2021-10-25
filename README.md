@@ -3,6 +3,6 @@ This is a repository that aims interfacing multiple temperature sensors through 
 <h1>Setting</h1>
 #ARDUINO program
 Install the following libraries:
-  1. LiquidCrystal_I2C.h
-  2. DHT.h
+  1. LiquidCrystal_I2C.h <br>
+  2. DHT.h<br>
  
