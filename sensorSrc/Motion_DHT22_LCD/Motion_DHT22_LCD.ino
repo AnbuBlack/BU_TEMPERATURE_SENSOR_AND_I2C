@@ -40,10 +40,29 @@ void loop() {
  // -------------------------------
   hum = dht.readHumidity();//온도값 읽기
   temp= dht.readTemperature();//습도값 읽기
+   Serial.print("Movement: ");
+  if (val == HIGH) {            // check if the input is HIGH
+    //We set it ass low
+      // we have just turned on
+      Serial.print("Motion!");
+      // We only want to print on the output change, not state
+      pirState = HIGH;
+    
+  } else {
+     // turn LED OFF
+    
+      // we have just turned of
+      Serial.print("M_ended!");
+      // We only want to print on the output change, not state
+     
+  }// put your main code here, to run repeatedly:
+  
+  
+
  
   Serial.print("HUMIDITY: "); // "HUMIDITY:" 출력
   Serial.print(hum,0);// 습도 값 소수점 이하 자리 없음
-  Serial.print(" %, TEMPERATURE: "); //"%"(습도단위) "TEMPERATURE:" 출력
+  Serial.print("  TEMPERATURE: "); //"%"(습도단위) "TEMPERATURE:" 출력
   Serial.print(temp, 1);//온도값은 소수점 이하 1자리까지 표시
   Serial.println(" C"); //"C" 온도 단위 표시
   
@@ -73,7 +92,7 @@ void loop() {
       // we have just turned of
       lcd.print("M_ended!");
       // We only want to print on the output change, not state
-     s
+     
   }// put your main code here, to run repeatedly:
   
   
