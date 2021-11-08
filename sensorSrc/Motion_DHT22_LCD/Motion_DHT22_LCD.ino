@@ -40,11 +40,11 @@ void loop() {
  // -------------------------------
   hum = dht.readHumidity();//온도값 읽기
   temp= dht.readTemperature();//습도값 읽기
-   Serial.print("Movement: ");
+  
   if (val == HIGH) {            // check if the input is HIGH
     //We set it ass low
       // we have just turned on
-      Serial.print("Motion!");
+      Serial.print("1");
       // We only want to print on the output change, not state
       pirState = HIGH;
     
@@ -52,7 +52,7 @@ void loop() {
      // turn LED OFF
     
       // we have just turned of
-      Serial.print("M_ended!");
+      Serial.print("0");
       // We only want to print on the output change, not state
      
   }// put your main code here, to run repeatedly:
