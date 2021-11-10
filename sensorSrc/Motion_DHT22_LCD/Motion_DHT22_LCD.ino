@@ -41,6 +41,9 @@ void loop() {
   if (val == HIGH) {            // check if the input is HIGH
     //We set it ass low
       // we have just turned on
+       digitalWrite(13, HIGH);   
+        delay(1000);
+      digitalWrite(13, LOW); 
       Serial.print("1");
       // We only want to print on the output change, not state
       pirState = HIGH;
@@ -58,9 +61,9 @@ void loop() {
     hum = dht.readHumidity();//온도값 읽기
   temp= dht.readTemperature();//습도값 읽기
  
-  Serial.print("\t"); // "HUMIDITY:" 출력
+  Serial.print(" "); // "HUMIDITY:" 출력
   Serial.print(hum,0);// 습도 값 소수점 이하 자리 없음
-  Serial.print("\t");
+  Serial.print(" ");
   Serial.print(temp, 1);//온도값은 소수점 이하 1자리까지 표시
   Serial.println(" "); //"C" 온도 단위 표시
   
