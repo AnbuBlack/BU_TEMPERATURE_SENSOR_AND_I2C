@@ -38,9 +38,6 @@ void loop() {
    val = digitalRead(inputPin);  // read input value
 
  // -------------------------------
-  hum = dht.readHumidity();//온도값 읽기
-  temp= dht.readTemperature();//습도값 읽기
-  
   if (val == HIGH) {            // check if the input is HIGH
     //We set it ass low
       // we have just turned on
@@ -58,13 +55,14 @@ void loop() {
   }// put your main code here, to run repeatedly:
   
   
-
+    hum = dht.readHumidity();//온도값 읽기
+  temp= dht.readTemperature();//습도값 읽기
  
-  Serial.print("HUMIDITY: "); // "HUMIDITY:" 출력
+  Serial.print("\t"); // "HUMIDITY:" 출력
   Serial.print(hum,0);// 습도 값 소수점 이하 자리 없음
-  Serial.print("  TEMPERATURE: "); //"%"(습도단위) "TEMPERATURE:" 출력
+  Serial.print("\t");
   Serial.print(temp, 1);//온도값은 소수점 이하 1자리까지 표시
-  Serial.println(" C"); //"C" 온도 단위 표시
+  Serial.println(" "); //"C" 온도 단위 표시
   
   lcd.setCursor(0,0); // LCD Cursor 원점
   lcd.print("TEMP:"); // LCD에 "temp" 표시
